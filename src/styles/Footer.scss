@@ -1,0 +1,47 @@
+
+.footer-container {
+    width: 100%;
+    background-color: #305a39;
+    .footer-section {
+        padding-top: 10px;
+        width: 100%;
+        background-color: white;
+        img {
+            transform: scale(0.5);
+        }
+    
+        h2 {
+            color: #305a39;
+            margin: 0; /* Remove margin to avoid spacing issues */
+        }
+    
+        .social-media {
+            font-family: 'Klein', sans-serif;
+            color: #305a39;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex; /* Use flexbox to align items */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            position: relative;
+            top: -10px;
+        }
+    
+        .address-container {
+            color: #305a39;
+            font-weight: bold;
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center horizontally */
+    
+            .address {
+                display: flex;
+    
+                p {
+                    font-family: 'Klein', sans-serif;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Klein';
+    src: url('../assets/klein/Klein-ExtraLight-trial.ttf') format('opentype');
+    font-weight: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Klein';
+    src: url('../assets/klein/Klein-Text-Book-trial.ttf') format('opentype');
+    font-weight: bold;
+}
+
+.navbar-section {
+    user-select: none;
+    color: white;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 60px;
+
+    .navbar-flexbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navbar-logo {
+            position: absolute;
+            left: 60px;
+
+            .logo-image {
+                height: 65px;
+            }            
+        }
+        
+        .navbar-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 1.5px;
+            gap: 55px;
+
+            a {
+                position: relative;
+                font-family: 'Klein', sans-serif;
+                font-weight: normal;
+                font-size: 1.3rem;
+                text-decoration: none;
+                color: inherit;
+            }
+            a::after {
+                content: '';
+                position: absolute;
+                height: 1px;
+                left: 0;
+                bottom: -3.5px;
+                width: 0;
+                background: white;
+                transition: width .4s;
+            }
+            a:hover:after{
+                width: 100%;
+            }
+            .toggler-section {
+                position: absolute;
+                right: 60px;
+
+                p {
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .english-button {
+                font-family: 'Klein', sans-serif;
+                font-weight: bold;
+            }
+
+            .french-button {
+                font-family: 'Klein', sans-serif;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .navbar-section {
+        .navbar-flexbox {
+            .navbar-links {
+                gap: 25px;
+
+                .toggler-section {
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+
+                a {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .navbar-section {
+        .menu-icon {
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            right: 70px;
+            top: 58px;
+            cursor: pointer;
+            display: block; 
+            z-index: 2;
+            
+            div {
+                width: 100%;
+                height: 2px;
+                margin: 8px;
+                background-color: white;
+                transition: 0.4s;
+            }
+        }
+        .menu-icon.open .bar1 {
+            transform: rotate(45deg) translate(4px, -2px);
+        }
+        .menu-icon.open .bar2 {
+            opacity: 0;
+        }
+        .menu-icon.open .bar3 {
+            transform: rotate(-45deg) translate(15px, -11px);
+        }
+        .navbar-flexbox {
+            display: block;
+
+            .navbar-logo {
+                top: 40px;
+            }
+            
+            .navbar-links {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                position: fixed;
+                gap: 50px;
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 1;
+
+                .toggler-section {
+                    position: relative;
+                    right: 0;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+            .navbar-links.show {
+                transform: translateX(0);
+                overflow-y: hidden;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-section {
+        padding-top: 30px;
+        padding-left: 40px;
+
+        .menu-icon {
+            top: 35px;
+            right: 35px;
+        }
+        .navbar-flexbox {
+            .navbar-logo {
+                left: 35px;
+                top: 27px;
+                
+                .logo-image {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
