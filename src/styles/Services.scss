@@ -5,8 +5,8 @@
 }
 
 @keyframes fade-in-services {
-    from {scale: 0.9;}
-    to {scale: 1;}
+    from {scale: 0.9 !important;}
+    to {scale: 1 !important;}
 }
 
 .services-section {
@@ -39,8 +39,8 @@
             .services-image {
                 width: 40%;
                 img {
-                    animation: fade-in-services linear;
-                    animation-timeline: view();
+                    animation: fade-in-services linear !important;
+                    animation-timeline: view() !important;
                     width: 100%; 
                     height: auto;
                 }
