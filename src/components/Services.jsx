@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer'; // For triggering animation on scroll
 import '../styles/Services.scss';
 import img1 from '../assets/landscaping-image.jpg';
 import img2 from '../assets/service-2-img.JPG';
@@ -38,12 +40,56 @@ function Services({ language }) {
         }
     };
 
+    // For triggering animation when the component is in view
+    const [ref1, inView1] = useInView({ threshold: 0.1 });
+    const controls1 = useAnimation();
+
+    useEffect(() => {
+        if (inView1) {
+            controls1.start({ scale: 1 });
+        } else {
+            controls1.start({ scale: 0.9 });
+        }
+    }, [controls1, inView1]);
+
+    // For maintenance image
+    const [ref2, inView2] = useInView({ threshold: 0.1 });
+    const controls2 = useAnimation();
+
+    useEffect(() => {
+        if (inView2) {
+            controls2.start({ scale: 1 });
+        } else {
+            controls2.start({ scale: 0.9 });
+        }
+    }, [controls2, inView2]);
+
+    // For nursery image
+    const [ref3, inView3] = useInView({ threshold: 0.1 });
+    const controls3 = useAnimation();
+
+    useEffect(() => {
+        if (inView3) {
+            controls3.start({ scale: 1 });
+        } else {
+            controls3.start({ scale: 0.9 });
+        }
+    }, [controls3, inView3]);
+
     return (
         <section className="services-section" id="services">
             <h1 className="services-title">{content[language].title}</h1>
             <div className="services-flexboxes">
                 <div className="flexbox-1">
-                    <div className="services-image"><img src={img1} alt="Landscaping service" /></div>
+                    <motion.div 
+                        className="services-image"
+                        ref={ref1} // Separate ref for landscaping
+                        initial={{ scale: 0.9 }}
+                        animate={controls1}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img src={img1} alt="Landscaping service" />
+                    </motion.div>
                     <div className="services-text-box">
                         <div><hr /></div>
                         <div className="services-subtitle"><h2>{content[language].landscaping.subtitle}</h2></div>
@@ -52,6 +98,7 @@ function Services({ language }) {
                         </div>
                     </div>
                 </div>
+
                 <div className="flexbox-2">
                     <div className="services-text-box">
                         <div><hr /></div>
@@ -60,10 +107,27 @@ function Services({ language }) {
                             <p>{content[language].maintenance.description}</p>
                         </div>
                     </div>
-                    <div className="services-image"><img src={img2} alt="Maintenance service" /></div>
+                    <motion.div 
+                        className="services-image"
+                        ref={ref2} // Separate ref for maintenance
+                        initial={{ scale: 0.9 }}
+                        animate={controls2}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img src={img2} alt="Maintenance service" />
+                    </motion.div>
                 </div>
+
                 <div className="flexbox-3">
-                    <div className="services-image"><img src={img3} alt="Plant nursery" /></div>
+                    <motion.div 
+                        className="services-image"
+                        ref={ref3} // Separate ref for nursery
+                        initial={{ scale: 0.9 }}
+                        animate={controls3}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img src={img3} alt="Plant nursery" />
+                    </motion.div>
                     <div className="services-text-box">
                         <div><hr /></div>
                         <div className="services-subtitle"><h2>{content[language].nursery.subtitle}</h2></div>

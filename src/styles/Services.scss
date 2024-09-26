@@ -4,11 +4,6 @@
     font-weight: normal;
 }
 
-@keyframes fade-in-services {
-    from {scale: 0.9 !important;}
-    to {scale: 1 !important;}
-}
-
 .services-section {
     font-family: 'Klein', sans-serif;
     max-width: 1900px;
@@ -39,8 +34,6 @@
             .services-image {
                 width: 40%;
                 img {
-                    animation: fade-in-services linear !important;
-                    animation-timeline: view() !important;
                     width: 100%; 
                     height: auto;
                 }

@@ -4,11 +4,6 @@
     font-weight: normal;
 }
 
-@keyframes fade-in {
-    from {scale: 0.9;}
-    to {scale: 1;}
-}
-
 .portfolio-section {
     margin-bottom: 100px;
     .portfolio-title {
@@ -31,8 +26,6 @@
         width: 100%;
 
         img {
-            animation: fade-in linear;
-            animation-timeline: view();
             width: 27%;
         }
     }
@@ -46,8 +39,6 @@
         width: 100%;
 
         img {
-            animation: fade-in linear;
-            animation-timeline: view();
             width: 27%;
         }
     }
