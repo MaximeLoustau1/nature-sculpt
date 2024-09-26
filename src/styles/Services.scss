@@ -281,7 +281,7 @@
     .services-section {
 
         .services-title {
-            margin-bottom: 0;
+            margin-bottom: 60px;
             letter-spacing: 0.6rem;
         }
         .services-flexboxes {
@@ -304,10 +304,12 @@
 
                     hr {
                         width: 60%;
+                        margin-left: 0;
                     }
 
                     .services-subtitle  {
                         font-size: 0.9rem;
+                        text-align: left;
 
                         h2 {
                             margin-bottom: 20px;
