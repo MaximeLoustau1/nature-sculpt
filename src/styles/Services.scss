@@ -25,6 +25,27 @@
         flex-direction: column;
         gap: 50px;
 
+        .flexbox-1, .flexbox-3 {
+            .services-text-box {
+                hr {
+                    margin-right: 0;
+                    width: 80%;
+                }
+                .services-subtitle {
+                    text-align: right;
+                }
+            }
+        }
+
+        .flexbox-2 {
+            .services-text-box {
+                hr {
+                    width: 80%;
+                    margin-left: 0;
+                }
+            }
+        }
+
         .flexbox-1, .flexbox-2, .flexbox-3 {
             width: 100%;
             display: flex;
@@ -47,7 +68,6 @@
                 justify-content: center;
 
                 .services-subtitle {
-                    text-align: center;
                     color: #305a39;
                     font-size: 1.3rem;
                     letter-spacing: 1rem;
