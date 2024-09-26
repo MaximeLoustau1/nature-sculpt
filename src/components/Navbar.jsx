@@ -7,8 +7,15 @@ function Navbar({ language, setLanguage }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleMenuClick = () => {
-        setIsMenuOpen(!isMenuOpen);
-        document.body.classList.toggle('no-scroll', !isMenuOpen); // Toggle class based on new state
+        const newState = !isMenuOpen;
+        setIsMenuOpen(newState);
+        
+        // Toggle no-scroll class based on the new state
+        if (newState) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
     };
 
     const handleLinkClick = (sectionId) => {
@@ -16,8 +23,9 @@ function Navbar({ language, setLanguage }) {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
+        
         setIsMenuOpen(false);
-        document.body.classList.remove('no-scroll'); // Always remove the class when a link is clicked
+        document.body.classList.remove('no-scroll');
     };
 
     return (
